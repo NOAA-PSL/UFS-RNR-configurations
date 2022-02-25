@@ -1,0 +1,21 @@
+EARTH_component_list: ATM
+ATM_model:            fv3
+ATM_petlist_bounds:            0 159
+ATM_attributes::
+  Verbosity = 0
+  DumpFields = false
+  ProfileMemory = false
+  OverwriteSlice = true
+::
+runSeq::
+ATM
+::
+DRIVER_attributes::
+      mediator_read_restart = T
+::
+MED_attributes::
+      ATM_model = fv3
+::
+ALLCOMP_attributes::
+      start_type = continue
+::

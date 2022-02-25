@@ -4,6 +4,7 @@ The following table specifies the respective applications and the
 corresponding tags/hashes valid for the UFS-RNR v1.0 configurations.
 
 <div align="center">
+
 | Application | Tag/Hash |
 | :-------------: | :-----------: |
 | [GSI](https://github.com/jswhit/GSI) | `750de32` |

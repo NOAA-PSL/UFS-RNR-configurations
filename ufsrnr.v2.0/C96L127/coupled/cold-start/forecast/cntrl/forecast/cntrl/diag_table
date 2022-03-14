@@ -1,5 +1,5 @@
 UFS_RNR_experiment
-2016 01 01 06 00 00
+2016 01 01 00 00 00
 # Output file declarations
 "grid_spec",              -1,  "months",   1, "days",  "time"
 "fv3_history",             0,  "hours",    1, "hours", "time"

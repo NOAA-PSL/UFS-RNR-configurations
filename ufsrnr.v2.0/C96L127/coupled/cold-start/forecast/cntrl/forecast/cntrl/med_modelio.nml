@@ -1,3 +1,4 @@
+! File created from /scratch2/BMC/gsienkf/Henry.Winterbottom/UFS-RNR.release.v2.0.0.tag/parm/atmos/med_modelio.nml.tmpl.
 &pio_inparm
   pio_netcdf_format = "64bit_offset"
   pio_numiotasks = -99
@@ -6,3 +7,4 @@
   pio_stride = 36
   pio_typename = "netcdf"
 /
+! Updated: 2022-03-13 13:48:44.

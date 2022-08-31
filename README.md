@@ -57,7 +57,6 @@ corresponding tags/hashes valid for the UFS-RNR v2.0 configurations.
 <div align="center">
 
 | Application | <div align="center">[GSI](https://github.com/jswhit/GSI)</div> | <div align="center">[UFS](https://github.com/ufs-community/ufs-weather-model)</div> | <div align="center">[UFS-RNR](https://github.com/noaa-psd/UFS-RNR)</div> | <div align="center">[SOCA-science](https://github.com/JCSDA-internal/soca-science)</div> |
-| :-------------: | :-----------: | | :-------------: | :-----------: | | :-------------: |
-| Tag | `750de32` | `b26a896` | `06747e5` | `9dce8a7` |
 
 </div>
+

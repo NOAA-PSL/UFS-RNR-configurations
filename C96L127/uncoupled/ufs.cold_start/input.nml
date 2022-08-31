@@ -1,0 +1,337 @@
+&amip_interp_nml
+  interp_oi_sst     = T,
+  use_ncep_sst      = T,
+  use_ncep_ice      = F,
+  no_anom_sst       = F,
+  data_set          = "reynolds_oi",
+  date_out_of_range = "climo",
+/
+&atmos_model_nml
+  blocksize    = 32
+  dycore_only  = F
+  ccpp_suite   = "FV3_GFS_v16_coupled_nsstNoahmpUGWPv1"
+/
+&diag_manager_nml
+  prepend_date = F
+/
+&fms_io_nml
+  checksum_required = F
+  max_files_r       = 100,
+  max_files_w       = 100,
+/
+&mpp_io_nml
+  shuffle       = 1,
+  deflate_level = 1,
+/
+&fms_nml
+  clock_grain        = "ROUTINE",
+  domains_stack_size = 4000000,
+  print_memory_usage = F
+/
+&fv_core_nml
+  layout              = 6,4
+  io_layout           = 1, 1
+  npx                 = 97
+  npy                 = 97
+  ntiles              = 6,
+  npz                 = 127
+  dz_min              = 2
+  psm_bc              = 1
+  grid_type           = -1
+  make_nh             = F
+  fv_debug            = F
+  range_warn          = F
+  reset_eta           = F
+  n_sponge            = 42
+  nudge_qv            = T
+  nudge_dz            = F
+  tau                 = 10.0
+  rf_cutoff           = 7500.0
+  d2_bg_k1            = 0.15
+  d2_bg_k2            = 0.04
+  d2_bg               = 0
+  kord_tm             = -9
+  kord_mt             =  9
+  kord_wz             =  9
+  kord_tr             =  9
+  hydrostatic         = F
+  phys_hydrostatic    = F
+  use_hydro_pressure  = F
+  beta                = 0.
+  a_imp               = 1.
+  p_fac               = 0.1
+  k_split             = 2
+  n_split             = 6
+  nwat                = 6
+  na_init             = 0
+  d_ext               = 0.0
+  dnats               = 1
+  fv_sg_adj           = 450
+  nord                = 2
+  dddmp               = 0.2
+  d4_bg               = 0.12
+  delt_max            = 0.002
+  vtdm4               = 0.02
+  ke_bg               = 0.
+  do_vort_damp        = T
+  external_ic         = F
+  external_eta        = T
+  gfs_phil            = F
+  nggps_ic            = T
+  mountain            = F
+  d_con               = 1.
+  hord_mt             = 5
+  hord_vt             = 5
+  hord_tm             = 5
+  hord_dp             = -5
+  hord_tr             = 8
+  adjust_dry_mass     = F
+  consv_te            = 1.
+  consv_am            = F
+  fill                = T
+  do_sat_adj          = T
+  dwind_2d            = F
+  print_freq          = 6
+  warm_start          = F
+  no_dycore           = F
+  z_tracer            = T
+  read_increment      = T
+  res_latlon_dynamics = "incr_2016012300_fhr06"
+  agrid_vel_rst       = T
+/
+&external_ic_nml
+  filtered_terrain = T
+  levp             = 128
+  gfs_dwinds       = T
+  checker_tr       = F
+  nt_checker       = 0
+/
+&gfs_physics_nml
+  fhzero                = 3.
+  oz_phys               = F
+  oz_phys_2015          = T
+  h2o_phys              = T
+  ldiag3d               = F
+  fhcyc                 = 6
+  use_ufo               = T
+  pre_rad               = F
+  imp_physics           = 11
+  pdfcld                = F
+  fhswr                 = 3600.
+  fhlwr                 = 3600.
+  ialb                  = 2
+  iems                  = 2
+  iaer                  = 1011
+  icliq_sw              = 2
+  iovr                  = 3
+  ico2                  = 2
+  isubc_sw              = 2
+  isubc_lw              = 2
+  isol                  = 2
+  lwhtr                 = T
+  swhtr                 = T
+  cnvgwd                = T
+  shal_cnv              = T
+  cal_pre               = F
+  redrag                = T
+  dspheat               = T
+  hybedmf               = F
+  satmedmf              = T
+  isatmedmf             = 1
+  lheatstrg             = T
+  random_clds           = F
+  trans_trac            = T
+  cnvcld                = T
+  imfshalcnv            = 2
+  imfdeepcnv            = 2
+  do_mynnedmf           = F
+  do_mynnsfclay         = F
+  icloud_bl             = 1
+  bl_mynn_edmf          = 1
+  bl_mynn_tkeadvect     = T
+  bl_mynn_edmf_mom      = 1
+  cdmbgwd               = 0.14,1.8,1.0,1.0
+  prslrd0               = 0.
+  ivegsrc               = 1
+  isot                  = 1
+  lsoil                 = 4
+  lsm                   = 2
+  iopt_dveg             = 4
+  iopt_crs              = 2
+  iopt_btr              = 1
+  iopt_run              = 1
+  iopt_sfc              = 1
+  iopt_frz              = 1
+  iopt_inf              = 1
+  iopt_rad              = 3
+  iopt_alb              = 1
+  iopt_snf              = 4
+  iopt_tbot             = 2
+  iopt_stc              = 3
+  debug                 = T
+  frac_grid             = T
+  fscav_aero            = "*:0.0"
+  nstf_name             = 2,1,0,0,
+  nst_anl               = T
+  psautco               = 0.0008,0.0005
+  prautco               = 0.00015,0.00015
+  ltaerosol             = F
+  lradar                = F
+  lgfdlmprad            = T
+  ttendlim              = 0.005
+  effr_in               = T
+  ldiag_ugwp            = F
+  do_ugwp               = F
+  do_tofd               = F
+  cplflx                = T
+  cplwav                = F
+  cplwav2atm            = F
+  min_lakeice           = 0.15
+  min_seaice            = 1.0e-11
+  gwd_opt               = 2
+  do_ugwp_v1_orog_only  = F
+  do_ugwp_v0            = F
+  do_ugwp_v1            = T
+  do_gsl_drag_ls_bl     = T
+  do_gsl_drag_ss        = T
+  do_gsl_drag_tofd      = T
+  do_ca                 = T
+  ca_sgs                = T
+  nca                   = 1
+  scells                = 2600
+  tlives                = 1800
+  nseed                 = 1
+  nfracseed             = 0.5
+  rcell                 = 0.72
+  ca_trigger            = T
+  nspinup               = 1
+  iseed_ca              = 2016010100
+/
+&gfdl_cloud_microphysics_nml
+  sedi_transport = T
+  do_sedi_heat   = F
+  rad_snow       = T
+  rad_graupel    = T
+  rad_rain       = T
+  const_vi       = F
+  const_vs       = F
+  const_vg       = F
+  const_vr       = F
+  vi_max         = 1.
+  vs_max         = 2.
+  vg_max         = 12.
+  vr_max         = 12.
+  qi_lim         = 1.
+  prog_ccn       = F
+  do_qa          = T
+  fast_sat_adj   = T
+  tau_l2v        = 225.
+  tau_v2l        = 150.
+  tau_g2v        = 900.
+  rthresh        = 10.e-6 
+  dw_land        = 0.16
+  dw_ocean       = 0.10
+  ql_gen         = 1.0e-3
+  ql_mlt         = 1.0e-3
+  qi0_crt        = 8.0E-5
+  qs0_crt        = 1.0e-3
+  tau_i2s        = 1000.
+  c_psaci        = 0.05
+  c_pgacs        = 0.01
+  rh_inc         = 0.30
+  rh_inr         = 0.30
+  rh_ins         = 0.30
+  ccn_l          = 300.
+  ccn_o          = 100.
+  c_paut         = 0.5
+  c_cracw        = 0.8
+  use_ppm        = F
+  use_ccn        = T
+  mono_prof      = T
+  z_slope_liq    = T
+  z_slope_ice    = T
+  de_ice         = F
+  fix_negative   = T
+  icloud_f       = 1
+  mp_time        = 150.
+  reiflag        = 2
+/
+&interpolator_nml
+  interp_method = "conserve_great_circle"
+/
+&cires_ugwp_nml
+  knob_ugwp_solver   = 2
+  knob_ugwp_version  = 1
+  knob_ugwp_source   = 1,1,0,0
+  knob_ugwp_wvspec   = 1,25,25,25
+  knob_ugwp_azdir    = 2,4,4,4
+  knob_ugwp_stoch    = 0,0,0,0
+  knob_ugwp_effac    = 1,1,1,1
+  knob_ugwp_doaxyz   = 1
+  knob_ugwp_doheat   = 1
+  knob_ugwp_dokdis   = 2
+  knob_ugwp_ndx4lh   = 4
+  knob_ugwp_palaunch = 275.0e2
+  knob_ugwp_nslope   = 1
+  knob_ugwp_lzmax    = 15.750e3
+  knob_ugwp_lzmin    = 0.75e3
+  knob_ugwp_lzstar   = 2.0e3
+  knob_ugwp_taumin   = 0.25e-3
+  knob_ugwp_tauamp   = 3.0e-3
+  knob_ugwp_lhmet    = 200.0e3
+  knob_ugwp_orosolv  = 'pss-1986'
+/
+&fv_grid_nml
+  grid_file = "INPUT/grid_spec.nc"
+/
+&namsfc
+  fnglac   = "fnglac"
+  fnmxic   = "fnmxic"
+  fntsfc   = "fntsfc"
+  fnsnoc   = "fnsnoc"
+  fnzorc   = "igbp",
+  fnalbc   = "./C96.snowfree_albedo.tileX.nc"
+  fnalbc2  = "./C96.facsf.tileX.nc"
+  fnaisc   = "fnaisc"
+  fntg3c   = "./C96.substrate_temperature.tileX.nc"
+  fnvegc   = "./C96.vegetation_greenness.tileX.nc"
+  fnvetc   = "./C96.vegetation_type.tileX.nc"
+  fnsotc   = "./C96.soil_type.tileX.nc"
+  fnsmcc   = "fnsmcc"
+  fnmskh   = "fnmskh"
+  fnsnoa   = "./snow_analysis"
+  fnvmnc   = "./C96.vegetation_greenness.tileX.nc"
+  fnvmxc   = "./C96.vegetation_greenness.tileX.nc"
+  fnslpc   = "./C96.slope_type.tileX.nc"
+  fnabsc   = "./C96.maximum_snow_albedo.tileX.nc"
+  ldebug   = F
+  fsmcl(2) = 99999 
+  fsmcl(3) = 99999 
+  fsmcl(4) = 99999 
+  landice  = F
+  ftsfs    = 99999
+  faisl    = 99999
+  faiss    = 99999
+  fsnol    = -2
+  fsnos    = 99999
+  fsicl    = 99999    
+  fsics    = 99999
+  ftsfl    = 99999
+  fvetl    = 99999
+  fsotl    = 99999
+  fvmnl    = 99999
+  fvmxl    = 99999
+  fslpl    = 99999
+  fabsl    = 99999
+/
+&nam_sfcperts
+/
+&nam_stochy
+/
+&MOM_input_nml
+  output_directory   = "MOM6_OUTPUT/",
+  input_filename     = "n"
+  restart_input_dir  = "INPUT/",
+  restart_output_dir = "RESTART/",
+  parameter_filename = "INPUT/MOM_input",
+                       "INPUT/MOM_override" /

@@ -19,46 +19,53 @@ States Government.
 
 This repository contains configurations for each release of the
 Unified Forecast System (UFS) Reanalysis and Reforecasting (RNR)
-system which can be found [here](https://github.com/noaa-psd/UFS-RNR).
-To obtain the entire UFS-RNR configuration archive, do:
+system which can be found here. To obtain the UFS-RNR configuration
+archive for a specific UFS-RNR release, do:
 
 ~~~
-user@host:$ git clone --recursive https://github.com/noaa-psd/UFS-RNR-configurations
+user@host:$ git clone --branch release/ufsrnr.v### https://github.com/noaa-psd/UFS-RNR-configurations
 ~~~
+
+where `release/ufsrnr.v###` is the respective UFS-RNR release against
+which to compare. Note that the latest UFS-RNR `develop` branch
+configuration will be that contained in the `develop` branch of this
+repository.
 
 # Configuration Archives
 
-The directory tree for each respective UFS-RNR release configurations
-follows that of the UFS-RNR workflow directory tree. For example, a
-given directory tree for a single cycle of a 3DVAR weakly-coupled
-UFS-RNR experiment would have the following structure.
+The archives are paritioned according to the forecast model resolution
+and UFS forecast configuration (e.g., `coupled` or `uncoupled`). For
+example, a coupled UFS-RNR experiment of cubed-sphere resolution C96
+and using 127 unstaggered vertical levels would be denoted as
+`C96L127/coupled`. The archive is then further partitioned according to
+the UFS forecast type (i.e., `cold-start` or `warm-start`). All
+cold-start dates for the respective configuration examples are
+relative to 0000 UTC 01 January 2016 while the warm-start dates are
+relative to 0600 UTC 01 January 2016. Each component of the UFS-RNR
+contains the respective configuration files used to the respective
+release baseline experiments. This includes the input files, the YAML
+files (where relevant), and other necessary input files required by
+the various UFS-RNR system applications.
 
-~~~
-├── forecast
-│   └── cntrl
-│       ├── history
-│       ├── INPUT
-│       ├── INPUT_NODA
-│       ├── MOM6_OUTPUT
-│       ├── RESTART
-├── gsi
-│   └── 3dvar
-├── jedi
-│   ├── soca
-│   │   └── 3dvar
-~~~
+# UFS-RNR Application Branches and Tags
 
-The configuration archives for the respective UFS-RNR releases follows
-this similar logic. The archives are paritioned according to the
-forecast model resolution and UFS forecast configuration (e.g.,
-`coupled` or `uncoupled`). For example, a coupled UFS-RNR experiment
-of cubed-sphere resolution C96 and using 64 unstaggered vertical
-levels would be denoted as `C96L64/coupled`. The archive is then
-further partitioned according to the UFS forecast type (i.e.,
-`cold-start` or `warm-start`). All cold-start dates for the respective
-configuration examples are relative to 0000 UTC 01 January 2016 while
-the warm-start dates are relative to 0600 UTC 01 January 2016. Each
-component of the UFS-RNR contains the respective configurtion files
-used to the respective release baseline experiments. This includes the
-input files, the YAML files (where relevant), and other necessary
-input files required by the various UFS-RNR system applications.
+The following table specifies the respective applications and the
+corresponding tags/hashes valid for the UFS-RNR v2.0 configurations.
+
+<div align="center">
+
+| Application | Tag/Hash |
+| :-------------: | :-----------: |
+| <div align="center">[GSI](https://github.com/jswhit/GSI)</div> | `750de32` |
+| <div align="center">[UFS](https://github.com/ufs-community/ufs-weather-model)</div> | `b26a896` |
+| <div align="center">[UFS-RNR](https://github.com/noaa-psd/UFS-RNR)</div> | `06747e5` |
+| <div align="center">[SOCA-science](https://github.com/JCSDA-internal/soca-science)</div> | `9dce8a7` |
+
+</div>
+
+<div align="center">
+
+| Application | <div align="center">[GSI](https://github.com/jswhit/GSI)</div> | <div align="center">[UFS](https://github.com/ufs-community/ufs-weather-model)</div> | <div align="center">[UFS-RNR](https://github.com/noaa-psd/UFS-RNR)</div> | <div align="center">[SOCA-science](https://github.com/JCSDA-internal/soca-science)</div> |
+| Tag | `750de32` | `b26a896` | `06747e5` | `9dce8a7` |
+
+</div>
